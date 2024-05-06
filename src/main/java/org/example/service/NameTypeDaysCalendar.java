@@ -1,12 +1,17 @@
 package org.example.service;
 
-public enum NameDaysCalendar {
+public enum NameTypeDaysCalendar {
     WEEKEND,
     SATURDAY,
     SUNDAY,
-    SHORTDAY;
+    WORKED;
 
-    public static boolean getTemplateByNameDate(String nameDate){
-        for (NameDaysCalendar nameTypeDate : )
+    public static boolean getTemplateByNameDate(String nameDate) {
+        if (String.valueOf(WORKED).equals(nameDate)) return false;
+
+        for (NameTypeDaysCalendar nameType : NameTypeDaysCalendar.values()) {
+            if (String.valueOf(nameType).equals(nameDate)) return true;
+        }
+        return false;
     }
 }
